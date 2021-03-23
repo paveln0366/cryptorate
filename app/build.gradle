@@ -60,7 +60,10 @@ dependencies {
 
     // Android architecture components
     def lifecycle_version = "2.3.0"
-    // ViewModel and LiveData
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     // Annotation processor
     kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
     // optional - ReactiveStreams support for LiveData
