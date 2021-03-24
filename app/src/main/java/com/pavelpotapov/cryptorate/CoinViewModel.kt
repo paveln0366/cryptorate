@@ -28,7 +28,7 @@ class CoinViewModel(application: Application) : AndroidViewModel(application) {
     init {
         loadData()
     }
-    
+
     private fun loadData() {
         val disposable = ApiFactory.apiService.getTopCoinsInfo(limit = 50)
             .map { it.data?.map { it.coinInfo?.name }?.joinToString(",") }
