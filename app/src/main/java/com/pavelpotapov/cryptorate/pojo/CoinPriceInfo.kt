@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
 
 // Этот объет содержит всю информацию о валюте
 @Entity(tableName = "full_price_list")
-data class CoinPriceInfo (
+data class CoinPriceInfo(
         @SerializedName("TYPE")
         @Expose
         val type: String?,
@@ -126,5 +126,4 @@ data class CoinPriceInfo (
         @SerializedName("IMAGEURL")
         @Expose
         val imageUrl: String?
-
 )

@@ -10,10 +10,10 @@ object ApiFactory {
     private const val BASE_URL = "https://min-api.cryptocompare.com/data/"
 
     private val retrofit = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .baseUrl(BASE_URL)
-            .build()
+        .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+        .baseUrl(BASE_URL)
+        .build()
 
     val apiService = retrofit.create(ApiService::class.java)
 }
