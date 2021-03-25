@@ -5,7 +5,7 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 // Этот объет по ключу RAW сожержит ключ BTC и далее ключ USD
-data class CoinPriceInfoRawData (
+data class CoinPriceInfoRawData(
     @SerializedName("RAW")
     @Expose
     val coinPriceInfoJsonObject: JsonObject? = null

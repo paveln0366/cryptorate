@@ -9,7 +9,6 @@ import com.pavelpotapov.cryptorate.api.ApiFactory
 import com.pavelpotapov.cryptorate.database.AppDatabase
 import com.pavelpotapov.cryptorate.pojo.CoinPriceInfo
 import com.pavelpotapov.cryptorate.pojo.CoinPriceInfoRawData
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.TimeUnit

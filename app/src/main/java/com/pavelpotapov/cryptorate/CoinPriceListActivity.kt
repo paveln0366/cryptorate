@@ -1,7 +1,6 @@
 package com.pavelpotapov.cryptorate
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -19,12 +18,15 @@ class CoinPriceListActivity : AppCompatActivity() {
         val adapter = CoinInfoAdapter(this)
         adapter.onCoinClickListener = object : CoinInfoAdapter.OnCoinClickListener {
             override fun onCoinClick(coinPriceInfo: CoinPriceInfo) {
-                Log.d("ON_CLICK_TEST", coinPriceInfo.fromSymbol)
+                val intent = CoinDetailActivity.newIntent(
+                    this@CoinPriceListActivity,
+                    coinPriceInfo.fromSymbol
+                )
+                startActivity(intent)
             }
         }
         rvCoinPriceList.adapter = adapter
-
-        viewModel = ViewModelProviders.of(this).get(CoinViewModel::class.java)
+        viewModel = ViewModelProviders.of(this)[CoinViewModel::class.java]
         viewModel.priceList.observe(this, Observer {
             adapter.coinInfoList = it
         })

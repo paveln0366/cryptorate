@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import com.pavelpotapov.cryptorate.api.ApiFactory.BASE_IMAGE_URL
-import com.pavelpotapov.cryptorate.utils.convertTimestempToTime
+import com.pavelpotapov.cryptorate.utils.convertTimestampToTime
 
 // Этот объет содержит всю информацию о валюте
 @Entity(tableName = "full_price_list")
@@ -130,7 +130,7 @@ data class CoinPriceInfo(
     val imageUrl: String?
 ) {
     fun getFormattedTime(): String {
-        return convertTimestempToTime(lastUpdate)
+        return convertTimestampToTime(lastUpdate)
     }
 
     fun getFullImageUrl(): String {
