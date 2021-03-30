@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.pavelpotapov.cryptorate.adapters.CoinInfoAdapter
+import com.pavelpotapov.cryptorate.adapters.CoinInfoAdapter_Factory.create
+import com.pavelpotapov.cryptorate.di.AppModule
+import com.pavelpotapov.cryptorate.di.DaggerAppComponent
 import com.pavelpotapov.cryptorate.pojo.CoinPriceInfo
 import kotlinx.android.synthetic.main.activity_coin_price_list.*
+import javax.inject.Inject
 
 class CoinPriceListActivity : AppCompatActivity() {
 
@@ -14,8 +18,13 @@ class CoinPriceListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_coin_price_list)
-        val adapter = CoinInfoAdapter(this)
+//        val adapter = CoinInfoAdapter(this)
+
+        val component = DaggerAppComponent.builder().appModule(AppModule(this)).build()
+        val adapter = component.getAdapter()
+
         adapter.onCoinClickListener = object : CoinInfoAdapter.OnCoinClickListener {
             override fun onCoinClick(coinPriceInfo: CoinPriceInfo) {
                 val intent = CoinDetailActivity.newIntent(

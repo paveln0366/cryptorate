@@ -9,8 +9,9 @@ import com.pavelpotapov.cryptorate.R
 import com.pavelpotapov.cryptorate.pojo.CoinPriceInfo
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_coin_info.view.*
+import javax.inject.Inject
 
-class CoinInfoAdapter(private val context: Context) :
+class CoinInfoAdapter @Inject constructor(private val context: Context) :
     RecyclerView.Adapter<CoinInfoAdapter.CoinInfoViewHolder>() {
 
     var coinInfoList: List<CoinPriceInfo> = listOf()
@@ -36,7 +37,7 @@ class CoinInfoAdapter(private val context: Context) :
                 val symbolsTemplate = context.resources.getString(R.string.symbols_template)
                 val lastUpdateTemplate = context.resources.getString(R.string.last_update_template)
                 tvSymbols.text = String.format(symbolsTemplate, fromSymbol, toSymbol)
-                tvPrice.text = price
+                tvPrice.text = String.format("%.3f", price?.toDouble())
                 tvLastUpdate.text = String.format(lastUpdateTemplate, getFormattedTime())
                 Picasso.get().load(getFullImageUrl()).into(ivLogoCoin)
                 itemView.setOnClickListener {
