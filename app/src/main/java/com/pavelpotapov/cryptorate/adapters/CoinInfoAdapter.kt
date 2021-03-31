@@ -11,7 +11,8 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_coin_info.view.*
 import javax.inject.Inject
 
-class CoinInfoAdapter @Inject constructor(private val context: Context) :
+//class CoinInfoAdapter @Inject constructor(private val context: Context) :
+class CoinInfoAdapter constructor(private val context: Context) :
     RecyclerView.Adapter<CoinInfoAdapter.CoinInfoViewHolder>() {
 
     var coinInfoList: List<CoinPriceInfo> = listOf()

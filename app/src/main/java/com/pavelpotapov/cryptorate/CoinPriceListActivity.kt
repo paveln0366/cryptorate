@@ -19,7 +19,7 @@ class CoinPriceListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        App.appComponent.inject(this)
+        App.appComponent.inject(activity = this@CoinPriceListActivity)
         setContentView(R.layout.activity_coin_price_list)
 //        val adapter = CoinInfoAdapter(this)
 
