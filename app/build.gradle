@@ -7,10 +7,6 @@ plugins {
     //id 'kotlin-android-extensions'
 }
 
-ext {
-    dagger_version = '2.33'
-}
-
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -88,6 +84,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 
     // Dagger 2
-    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    String dagger_version = '2.33'
     implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
 }

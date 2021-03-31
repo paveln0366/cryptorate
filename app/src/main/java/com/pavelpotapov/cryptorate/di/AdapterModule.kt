@@ -7,12 +7,12 @@ import dagger.Provides
 import org.jetbrains.annotations.NotNull
 import javax.inject.Singleton
 
-@Module
+//@Module
 class AdapterModule() {
-    @Provides
-    @Singleton
-    @NotNull
-    fun provideCoinInfoAdapter(context: Context): CoinInfoAdapter {
-        return CoinInfoAdapter(context)
-    }
+//    @Provides
+//    @Singleton
+//    @NotNull
+//    fun provideCoinInfoAdapter(context: Context): CoinInfoAdapter {
+//        return CoinInfoAdapter(context)
+//    }
 }
