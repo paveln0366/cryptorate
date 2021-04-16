@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.pavelpotapov.cryptorate.adapters.CoinInfoAdapter
-import com.pavelpotapov.cryptorate.di.AppModule
-import com.pavelpotapov.cryptorate.di.DaggerAppComponent
 import com.pavelpotapov.cryptorate.pojo.CoinPriceInfo
 import kotlinx.android.synthetic.main.activity_coin_price_list.*
 import javax.inject.Inject
